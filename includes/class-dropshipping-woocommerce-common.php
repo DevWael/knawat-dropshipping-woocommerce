@@ -567,7 +567,8 @@ function knawat_dropshipwc_get_activated_plugins(){
 	$active_plugins = array(
 		'featured-image-by-url' =>false,
 		'woocommerce-currency-switcher' =>false,
-		'qtranslate-x' =>false		
+		'qtranslate-x' =>false,
+		'qtranslate-xt' =>false,
 	);
 
 	$blog_plugins = get_option( 'active_plugins', array() );
@@ -576,6 +577,10 @@ function knawat_dropshipwc_get_activated_plugins(){
 	// Check if qTranslate X is activated
 	if ( in_array( 'qtranslate-x/qtranslate.php', $blog_plugins ) || isset( $site_plugins['qtranslate-x/qtranslate.php'] ) ) {
 		$active_plugins['qtranslate-x'] = true;
+	}
+
+	if ( in_array( 'qtranslate-xt/qtranslate.php', $blog_plugins ) || isset( $site_plugins['qtranslate-xt/qtranslate.php'] ) ) {
+		$active_plugins['qtranslate-xt'] = true;
 	}
 
 	// Check if Featued image by URL is activated
